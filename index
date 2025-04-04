@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVOSGA - Gerador de Senha</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a3e72;
+            --primary-dark: #0d2b57;
+            --secondary: #d32f2f;
+            --light: #f8f9fa;
+            --dark: #333;
+            --gray: #6c757d;
+            --success: #28a745;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f5f7fa;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            height: 60px;
+            transition: var(--transition);
+        }
+
+        .logo.nohc-logo {
+            filter: brightness(0) invert(1);
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 1rem;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .ticket {
+            background: var(--light);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+            display: none;
+        }
+
+        .ticket-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+
+        .ticket-info {
+            margin-bottom: 1rem;
+        }
+
+        .btn-success {
+            background: var(--success);
+            display: none;
+            margin: 0 auto;
+        }
+
+        .btn-success:hover {
+            background: #218838;
+        }
+
+        .success-story {
+            background: #e8f5e9;
+            border-left: 4px solid var(--success);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            text-align: left;
+            display: none;
+        }
+
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .logo {
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Gerador de Senha - NOVOSGA</h1>
+            <div class="logo-container">
+                <img src="https://cdn.rawgit.com/novosga/art/39bf72ac/dist/logo_1200x630.png" alt="NOVOSGA Logo" class="logo">
+                <img src="https://nohc.com.br/wp-content/uploads/2022/03/nohc.png" alt="NOHC Logo" class="logo nohc-logo">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="card">
+            <div id="form-section">
+                <div class="form-group">
+                    <label for="name">Seu nome</label>
+                    <input type="text" id="name" placeholder="Digite seu nome completo">
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Assunto do atendimento</label>
+                    <select id="subject">
+                        <option value="">Selecione uma opção</option>
+                        <option value="1">Continuar sem tecnologia (fila física)</option>
+                        <option value="2">Otimizar a gestão de atendimento do meu hospital</option>
+                        <option value="3">Sistema manual com papel e caneta</option>
+                        <option value="4">Planilha eletrônica desatualizada</option>
+                        <option value="5">Sistema legado sem suporte</option>
+                    </select>
+                </div>
+                
+                <button id="generate-btn">Gerar Senha</button>
+            </div>
+            
+            <div id="ticket-section" class="ticket">
+                <h3>Sua senha de atendimento</h3>
+                <div class="ticket-number" id="ticket-number">002</div>
+                <div class="ticket-info">
+                    <p><strong>Nome:</strong> <span id="ticket-name"></span></p>
+                    <p><strong>Assunto:</strong> <span id="ticket-subject"></span></p>
+                </div>
+                
+                <div class="success-story">
+                    <h4><i class="fas fa-check-circle"></i> História de Sucesso</h4>
+                    <p>O Hospital Estadual de Referência Cirúrgica reduziu em 65% o tempo de espera dos pacientes após a implementação do NOVOSGA, com aumento de 40% na satisfação dos usuários e integração completa com seus sistemas existentes.</p>
+                </div>
+                
+                <button id="proposal-btn" class="btn-success">Quero conhecer essa proposta!</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 NOVOSGA - Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const generateBtn = document.getElementById('generate-btn');
+            const proposalBtn = document.getElementById('proposal-btn');
+            const formSection = document.getElementById('form-section');
+            const ticketSection = document.getElementById('ticket-section');
+            
+            generateBtn.addEventListener('click', function() {
+                const name = document.getElementById('name').value.trim();
+                const subject = document.getElementById('subject').value;
+                const subjectText = document.getElementById('subject').options[document.getElementById('subject').selectedIndex].text;
+                
+                if (!name || !subject) {
+                    alert('Por favor, preencha todos os campos!');
+                    return;
+                }
+                
+                // Update ticket info
+                document.getElementById('ticket-name').textContent = name;
+                document.getElementById('ticket-subject').textContent = subjectText;
+                
+                // Show ticket section
+                formSection.style.display = 'none';
+                ticketSection.style.display = 'block';
+                
+                // Show success story and proposal button only if option 2 is selected
+                if (subject === '2') {
+                    document.querySelector('.success-story').style.display = 'block';
+                    proposalBtn.style.display = 'block';
+                }
+            });
+            
+            proposalBtn.addEventListener('click', function() {
+                window.location.href = 'https://lukyammm.github.io/SGA_QUOTE/';
+            });
+        });
+    </script>
+</body>
+</html>
