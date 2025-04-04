@@ -294,6 +294,18 @@
             line-height: 1.7;
         }
 
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .benefit-item i {
+            color: var(--success);
+            margin-top: 0.2rem;
+        }
+
         .highlight {
             background: linear-gradient(120deg, #ffecb3, #ffecb3);
             padding: 0.2rem 0.4rem;
@@ -363,7 +375,7 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="subject">Como você gerencia seu fluxo de atendimento hoje?</label>
+                    <label for="subject">Assunto</label>
                     <select id="subject">
                         <option value="">Selecione uma opção</option>
                         <option value="1">Continuar sem tecnologia (fila física)</option>
@@ -384,19 +396,45 @@
                 <div class="ticket-number" id="ticket-number">002</div>
                 <div class="ticket-info">
                     <p><strong>Nome:</strong> <span id="ticket-name"></span></p>
-                    <p><strong>Modelo atual:</strong> <span id="ticket-subject"></span></p>
+                    <p><strong>Assunto:</strong> <span id="ticket-subject"></span></p>
                     <p><strong>Status:</strong> Aguardando modernização</p>
                 </div>
                 
                 <div class="success-story">
                     <h4><i class="fas fa-check-circle"></i> Senha 001 - História de Sucesso</h4>
-                    <p>O <span class="highlight">Hospital Estadual de Referência Cirúrgica</span> implementou o NOVOSGA e em 3 meses alcançou:</p>
-                    <ul style="list-style-type: none; margin-top: 0.5rem;">
-                        <li><i class="fas fa-check" style="color: var(--success);"></i> <strong>65% de redução</strong> no tempo de espera</li>
-                        <li><i class="fas fa-check" style="color: var(--success);"></i> <strong>40% de aumento</strong> na satisfação dos pacientes</li>
-                        <li><i class="fas fa-check" style="color: var(--success);"></i> <strong>100% de integração</strong> com sistemas existentes</li>
-                        <li><i class="fas fa-check" style="color: var(--success);"></i> <strong>Relatórios automatizados</strong> para gestão</li>
-                    </ul>
+                    <p>Um Hospital Estadual de Referência Cirúrgica implementou o NOVOSGA e em 3 meses alcançou:</p>
+                    
+                    <div class="benefit-item">
+                        <i class="fas fa-arrow-down"></i>
+                        <div>
+                            <strong>Redução no tempo de espera</strong><br>
+                            <small>Atendimentos 60% mais rápidos</small>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <i class="fas fa-smile"></i>
+                        <div>
+                            <strong>Aumento na satisfação dos pacientes</strong><br>
+                            <small>Melhor avaliação em pesquisas de satisfação</small>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <div>
+                            <strong>Economia de dinheiro</strong><br>
+                            <small>Técnicos de enfermagem deixaram de perder tempo chamando pacientes manualmente</small>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <i class="fas fa-microchip"></i>
+                        <div>
+                            <strong>Tecnologia moderna</strong><br>
+                            <small>Sistema integrado com todas as áreas do hospital</small>
+                        </div>
+                    </div>
                 </div>
                 
                 <button id="proposal-btn" class="btn-success">
